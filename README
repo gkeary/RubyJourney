@@ -1,0 +1,24 @@
+this project captures some of my ruby learning files.  
+It starts with some stuff I used while rescuing Sandee's pictures
+
+Here is a reference on How to suppress excessive irb console output:
+
+When in IRB or Console, you can often get back large blocks of output even when you didn’t want it. This happens often when inspecting your database through Console, working with SOAP responses, XML parsing, etc. You could always scroll up in your terminals buffer to find the results you were looking for, or, you can forcefully “suppress” the IRB output.
+
+
+# using each
+>> User.all.each { |u| u.save }
+=> [#<="" p="">
+
+# using map
+>> User.all.map { |u| u.save }
+=> [true, true, true .... etc, etc, etc]
+
+# suppressing
+>> User.all.map { |u| u.save }; 0
+=> 0
+
+Just add a semi-colon followed by an object.
+
+Finding this out after years of scrolling resulted in a large ‘facepalm’ on my part ;)
+
